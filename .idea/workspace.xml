@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/BeanFactoryTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/small-spring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/BeanFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" afterDir="false" />
+    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="创建简单的Bean容器">
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/BeansException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/BeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/BeansException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanDefinition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/BeanFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/BeanFactoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/BeanFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +39,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="release-20230223" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -55,11 +68,12 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yangweiyao.springframework.beans" />
       <recent name="com.yangweiyao.springframework.test" />
     </key>
   </component>
@@ -82,7 +96,7 @@
       <module name="small-spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yangweiyao.springframework.*" />
+          <option name="PATTERN" value="com.yangweiyao.springframework.beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,8 +123,16 @@
       <workItem from="1677034312734" duration="3094000" />
       <workItem from="1677051631631" duration="1198000" />
       <workItem from="1677059650742" duration="598000" />
-      <workItem from="1677119024814" duration="2236000" />
+      <workItem from="1677119024814" duration="12290000" />
     </task>
+    <task id="LOCAL-00001" summary="创建简单的Bean容器">
+      <created>1677122740944</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677122740944</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +148,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="创建简单的Bean容器" />
+    <option name="LAST_COMMIT_MESSAGE" value="创建简单的Bean容器" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((NoSuchMethodException)((InstantiationException)e).cause).cause" custom="java.lang.NoSuchMethodException,java.lang.InstantiationException" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
