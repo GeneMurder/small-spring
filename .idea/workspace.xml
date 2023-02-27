@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="创建简单的Bean容器">
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/BeansException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/BeansException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="实现 Bean 的定义、注册、获取">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/asm_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/cglib_2_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/cglib_nodep_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/asm-9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/cglib-nodep-2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/InstantiationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/SimpleInstantiationStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanDefinition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/BeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/BeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/BeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/BeanFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/BeanFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/BeanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/small-spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/small-spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/BeanFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release-20230223" />
+        <entry key="$PROJECT_DIR$" value="release-20230224" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +64,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/tydk/java/diffbusi_operation",
+    "last_opened_file_path": "D:/i-code/small-spring/small-spring/lib",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -72,6 +73,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\i-code\small-spring\small-spring\lib" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.yangweiyao.springframework.beans" />
       <recent name="com.yangweiyao.springframework.test" />
@@ -123,7 +127,8 @@
       <workItem from="1677034312734" duration="3094000" />
       <workItem from="1677051631631" duration="1198000" />
       <workItem from="1677059650742" duration="598000" />
-      <workItem from="1677119024814" duration="12290000" />
+      <workItem from="1677119024814" duration="16370000" />
+      <workItem from="1677220604524" duration="10317000" />
     </task>
     <task id="LOCAL-00001" summary="创建简单的Bean容器">
       <created>1677122740944</created>
@@ -132,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677122740944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="实现 Bean 的定义、注册、获取">
+      <created>1677206254402</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677206254402</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +163,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="创建简单的Bean容器" />
-    <option name="LAST_COMMIT_MESSAGE" value="创建简单的Bean容器" />
+    <MESSAGE value="实现 Bean 的定义、注册、获取" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现 Bean 的定义、注册、获取" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

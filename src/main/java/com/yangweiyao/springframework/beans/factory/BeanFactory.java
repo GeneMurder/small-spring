@@ -15,6 +15,15 @@ public interface BeanFactory {
     Object getBean(String name) throws BeansException;
 
     /**
+     * 获取bean实例
+     * @param name bean名称
+     * @param args 入参
+     * @return bean实例
+     * @throws BeansException
+     */
+    Object getBean(String name, Object... args) throws BeansException;
+
+    /**
      * 注册Bean实例
      * @param name bean名称
      * @param beanDefinition

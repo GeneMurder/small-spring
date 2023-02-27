@@ -11,6 +11,17 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
+    private InstantiationStrategy instantiationStrategy;
+
+    public DefaultListableBeanFactory () {
+        // 默认JDK实例化
+        this.instantiationStrategy = new SimpleInstantiationStrategy();
+    }
+
+    public DefaultListableBeanFactory (InstantiationStrategy instantiationStrategy) {
+        this.instantiationStrategy = instantiationStrategy;
+    }
+
     @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) {
         beanDefinitionMap.put(name, beanDefinition);
@@ -21,5 +32,10 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         BeanDefinition beanDefinition = beanDefinitionMap.get(name);
         if (beanDefinition == null) throw new BeansException("No bean named '" + name + "' is defined");
         return beanDefinition;
+    }
+
+    @Override
+    protected InstantiationStrategy getInstantiationStrategy() {
+        return this.instantiationStrategy;
     }
 }
