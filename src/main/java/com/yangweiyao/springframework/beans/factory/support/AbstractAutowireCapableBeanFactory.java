@@ -1,6 +1,10 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.yangweiyao.springframework.beans.BeanReference;
 import com.yangweiyao.springframework.beans.BeansException;
+import com.yangweiyao.springframework.beans.PropertyValue;
+import com.yangweiyao.springframework.beans.PropertyValues;
 import com.yangweiyao.springframework.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
@@ -17,6 +21,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     protected Object createBean(String name, BeanDefinition beanDefinition) {
         try {
             Object bean = beanDefinition.getBean().newInstance();
+            applyPropertyValues(name, bean, beanDefinition);
             addSingleton(name, bean);
             return bean;
         } catch (InstantiationException | IllegalAccessException e) {
@@ -28,12 +33,30 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     protected Object createBean(String name, BeanDefinition beanDefinition, Object[] args) {
         try {
             Object bean = createBeanInstance(name, beanDefinition, args);
+            applyPropertyValues(name, bean, beanDefinition);
             addSingleton(name, bean);
             return bean;
         } catch (Exception e) {
             throw new BeansException("Instantiation of bean failed", e);
         }
     }
+
+    protected void applyPropertyValues(String beanName, Object bean, BeanDefinition beanDefinition) {
+        PropertyValues propertyValues = beanDefinition.getPropertyValues();
+        for (PropertyValue propertyValue : propertyValues.getPropertyValues()) {
+            String name = propertyValue.getName();
+            Object value = propertyValue.getValue();
+            if(value instanceof BeanReference) {
+                // A依赖B, 获取B的实例化
+                // TODO 需要注意我们并没有去处理循环依赖的问题
+                BeanReference beanReference = (BeanReference) value;
+                value = getBean(beanReference.getBeanName());
+            }
+            // 属性填充
+            BeanUtil.setFieldValue(bean, name, value);
+        }
+    }
+
 
     protected Object createBeanInstance(String name, BeanDefinition beanDefinition, Object[] args) {
         Constructor<?> constructorToUse = null;

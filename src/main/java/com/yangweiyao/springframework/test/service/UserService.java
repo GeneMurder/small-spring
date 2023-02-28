@@ -1,15 +1,13 @@
 package com.yangweiyao.springframework.test.service;
 
+import com.yangweiyao.springframework.test.dao.UserDao;
+
 public class UserService {
 
-    private String username;
+    private UserDao userDao;
 
-    public UserService(String username) {
-        this.username = username;
-    }
-
-    public void queryUserInfo() {
-        System.out.println("模拟查询用户信息: " + username);
+    public void queryUserInfo(String userId) {
+        System.out.println("查询用户信息: " + userDao.queryUserName(userId));
     }
 
 
