@@ -1,4 +1,4 @@
-package com.yangweiyao.springframework.beans;
+package com.yangweiyao.springframework.beans.factory.config;
 
 /**
  * 属性依赖

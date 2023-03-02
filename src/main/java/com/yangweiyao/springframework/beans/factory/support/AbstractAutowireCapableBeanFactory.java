@@ -1,7 +1,7 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.yangweiyao.springframework.beans.BeanReference;
+import com.yangweiyao.springframework.beans.factory.config.BeanReference;
 import com.yangweiyao.springframework.beans.BeansException;
 import com.yangweiyao.springframework.beans.PropertyValue;
 import com.yangweiyao.springframework.beans.PropertyValues;
