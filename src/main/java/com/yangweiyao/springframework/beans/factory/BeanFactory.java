@@ -2,9 +2,10 @@ package com.yangweiyao.springframework.beans.factory;
 
 
 import com.yangweiyao.springframework.beans.BeansException;
-import com.yangweiyao.springframework.beans.factory.config.BeanDefinition;
 
 public interface BeanFactory {
+
+    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
 
     /**
      * 获取bean实例
@@ -22,12 +23,5 @@ public interface BeanFactory {
      * @throws BeansException
      */
     Object getBean(String name, Object... args) throws BeansException;
-
-    /**
-     * 注册Bean实例
-     * @param name bean名称
-     * @param beanDefinition
-     */
-    void registerBeanDefinition(String name, BeanDefinition beanDefinition);
 
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class UserDao {
 
+    private String version;
     private static Map<String, String> hashMap = new HashMap<>();
 
     static {
@@ -19,8 +20,15 @@ public class UserDao {
      * @return 用户名称
      */
     public String queryUserName(String userId) {
-        System.out.println("查询数据库, userId:" + userId);
+        System.out.println(String.format("查询数据库, version:%s, userId:%s", version, userId));
         return hashMap.get(userId);
     }
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }

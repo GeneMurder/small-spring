@@ -1,6 +1,8 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.yangweiyao.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import com.yangweiyao.springframework.beans.factory.config.BeanPostProcessor;
 import com.yangweiyao.springframework.beans.factory.config.BeanReference;
 import com.yangweiyao.springframework.beans.BeansException;
 import com.yangweiyao.springframework.beans.PropertyValue;
@@ -8,9 +10,11 @@ import com.yangweiyao.springframework.beans.PropertyValues;
 import com.yangweiyao.springframework.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
+import java.util.List;
 import java.util.Objects;
 
-public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
+public abstract class AbstractAutowireCapableBeanFactory extends
+        AbstractBeanFactory implements AutowireCapableBeanFactory {
 
     /**
      * 一个是基于 Java 本身自带的方法 DeclaredConstructor，
@@ -19,26 +23,69 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
      */
     @Override
     protected Object createBean(String name, BeanDefinition beanDefinition) {
-        try {
-            Object bean = beanDefinition.getBean().newInstance();
-            applyPropertyValues(name, bean, beanDefinition);
-            addSingleton(name, bean);
-            return bean;
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new BeansException("Instantiation of bean failed", e);
-        }
+        return createBean(name, beanDefinition, null);
     }
 
     @Override
     protected Object createBean(String name, BeanDefinition beanDefinition, Object[] args) {
         try {
-            Object bean = createBeanInstance(name, beanDefinition, args);
+            Object bean;
+            if(args == null || args.length == 0) {
+                bean = beanDefinition.getBean().newInstance();
+            } else {
+                bean = createBeanInstance(name, beanDefinition, args);
+            }
+            // 给 Bean 填充属性
             applyPropertyValues(name, bean, beanDefinition);
+            // 执行 Bean 的初始化方法和 BeanPostProcessor 的前置和后置处理方法
+            bean = initializeBean(name, bean, beanDefinition);
             addSingleton(name, bean);
             return bean;
         } catch (Exception e) {
             throw new BeansException("Instantiation of bean failed", e);
         }
+    }
+
+    private Object initializeBean(String name, Object bean, BeanDefinition beanDefinition) {
+        // 1. 执行 BeanPostProcessor Before 处理
+        Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, name);
+        // 执行 Bean 对象的初始化方法
+        try {
+            invokeInitMethods(name, wrappedBean, beanDefinition);
+        } catch (Exception e) {
+            throw new BeansException("Invocation of init method of bean[" + name + "] failed", e);
+        }
+        // 2. 执行 BeanPostProcessor After 处理
+        wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, name);
+        return wrappedBean;
+    }
+
+    private void invokeInitMethods(String name, Object wrappedBean, BeanDefinition beanDefinition) {
+        // TODO invokeInitMethods
+    }
+
+    @Override
+    public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName) throws BeansException {
+        Object result = existingBean;
+        List<BeanPostProcessor> beanPostProcessors = getBeanPostProcessors();
+        for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
+            Object o = beanPostProcessor.postProcessBeforeInitialization(result, beanName);
+            if(Objects.isNull(o)) return result;
+            result = o;
+        }
+        return result;
+    }
+
+    @Override
+    public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName) throws BeansException {
+        Object result = existingBean;
+        List<BeanPostProcessor> beanPostProcessors = getBeanPostProcessors();
+        for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
+            Object o = beanPostProcessor.postProcessAfterInitialization(result, beanName);
+            if(Objects.isNull(o)) return result;
+            result = o;
+        }
+        return result;
     }
 
     protected void applyPropertyValues(String beanName, Object bean, BeanDefinition beanDefinition) {

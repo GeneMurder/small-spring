@@ -35,6 +35,11 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     }
 
     @Override
+    public void preInstantiateSingletons() throws BeansException {
+
+    }
+
+    @Override
     protected InstantiationStrategy getInstantiationStrategy() {
         return this.instantiationStrategy;
     }
@@ -60,4 +65,5 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         });
         return result;
     }
+
 }
