@@ -19,13 +19,15 @@ import java.io.InputStream;
 
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
-    private final static String BEAN = "bean";
-    private final static String ID = "id";
-    private final static String NAME = "name";
-    private final static String CLASS = "class";
-    private final static String VALUE = "value";
-    private final static String REF = "ref";
-    private final static String PROPERTY = "property";
+    protected final static String BEAN = "bean";
+    protected final static String ID = "id";
+    protected final static String NAME = "name";
+    protected final static String CLASS = "class";
+    protected final static String VALUE = "value";
+    protected final static String REF = "ref";
+    protected final static String PROPERTY = "property";
+    protected final static String INIT_METHOD = "init-method";
+    protected final static String DESTROY_METHOD = "destroy-method";
 
     public XmlBeanDefinitionReader(BeanDefinitionRegistry registry) {
         super(registry);
@@ -91,6 +93,10 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             String id = bean.getAttribute(ID);
             String name = bean.getAttribute(NAME);
             String className = bean.getAttribute(CLASS);
+            //增加对init-method、destroy-method的读取
+            String initMethod = bean.getAttribute(INIT_METHOD);
+            String destroyMethod = bean.getAttribute(DESTROY_METHOD);
+
             // 获取 Class，方便获取类中的名称
             Class<?> clazz = Class.forName(className);
             // 优先级 id > name
@@ -101,6 +107,9 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
             // 定义Bean
             BeanDefinition beanDefinition = new BeanDefinition(clazz);
+            beanDefinition.setInitMethodName(initMethod);
+            beanDefinition.setDestroyMethodName(destroyMethod);
+
             for (int j = 0; j < bean.getChildNodes().getLength(); j++) {
                 if (!(bean.getChildNodes().item(j) instanceof Element)) continue;
                 if (!PROPERTY.equals(bean.getChildNodes().item(j).getNodeName())) continue;

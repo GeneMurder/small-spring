@@ -1,6 +1,9 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.sun.xml.internal.ws.util.StringUtils;
+import com.yangweiyao.springframework.beans.factory.DisposableBean;
+import com.yangweiyao.springframework.beans.factory.InitializingBean;
 import com.yangweiyao.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import com.yangweiyao.springframework.beans.factory.config.BeanPostProcessor;
 import com.yangweiyao.springframework.beans.factory.config.BeanReference;
@@ -10,6 +13,7 @@ import com.yangweiyao.springframework.beans.PropertyValues;
 import com.yangweiyao.springframework.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,10 +43,19 @@ public abstract class AbstractAutowireCapableBeanFactory extends
             applyPropertyValues(name, bean, beanDefinition);
             // 执行 Bean 的初始化方法和 BeanPostProcessor 的前置和后置处理方法
             bean = initializeBean(name, bean, beanDefinition);
+            // 注册实现了 DisposableBean 接口的 Bean 对象
+            registerDisposableBeanIfNecessary(name, bean, beanDefinition);
             addSingleton(name, bean);
             return bean;
         } catch (Exception e) {
             throw new BeansException("Instantiation of bean failed", e);
+        }
+    }
+
+    private void registerDisposableBeanIfNecessary(String name, Object bean, BeanDefinition beanDefinition) {
+        if(bean instanceof DisposableBean || (beanDefinition.getDestroyMethodName() != null
+                && beanDefinition.getDestroyMethodName().length() != 0)) {
+            registerDisposableBean(name, new DisposableBeanAdapter(bean, name, beanDefinition));
         }
     }
 
@@ -60,8 +73,19 @@ public abstract class AbstractAutowireCapableBeanFactory extends
         return wrappedBean;
     }
 
-    private void invokeInitMethods(String name, Object wrappedBean, BeanDefinition beanDefinition) {
-        // TODO invokeInitMethods
+    private void invokeInitMethods(String name, Object bean, BeanDefinition beanDefinition) throws Exception {
+        // 1. 实现接口 InitializingBean
+        if(bean instanceof InitializingBean) {
+            InitializingBean initializingBean = (InitializingBean) bean;
+            initializingBean.afterPropertiesSet();
+        }
+
+        // 2. 配置信息 init-method {判断是为了避免二次执行销毁}
+        String initMethodName = beanDefinition.getInitMethodName();
+        if(Objects.nonNull(initMethodName) && initMethodName.length() != 0) {
+            Method method = beanDefinition.getBean().getMethod(initMethodName);
+            method.invoke(bean);
+        }
     }
 
     @Override

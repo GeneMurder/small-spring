@@ -1,5 +1,6 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
+import com.yangweiyao.springframework.beans.factory.DisposableBean;
 import com.yangweiyao.springframework.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.HashMap;
@@ -12,7 +13,9 @@ import java.util.Map;
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
-    private Map<String, Object> singletonObjects = new HashMap<>();
+    private final Map<String, Object> singletonObjects = new HashMap<>();
+
+    private final Map<String, DisposableBean> disposableBeans = new HashMap<>();
 
     @Override
     public Object getSingleton(String beanName) {
@@ -26,6 +29,15 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
      */
     protected void addSingleton(String beanName, Object singletonObject) {
         singletonObjects.put(beanName, singletonObject);
+    }
+
+    /**
+     * 在创建 Bean 对象的实例的时候，需要把销毁方法保存起来，方便后续执行销毁动作进行调用。
+     * @param beanName beanName
+     * @param bean 销毁bean
+     */
+    protected void registerDisposableBean(String beanName, DisposableBean bean) {
+        disposableBeans.put(beanName, bean);
     }
 
 
