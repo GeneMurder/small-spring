@@ -8,6 +8,7 @@ public class ApplicationContextTest {
     public static void main(String[] args) {
         // 1.初始化 BeanFactory
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        applicationContext.registerShutdownHook();
 
         // 4. 获取bean，调用接口
         UserService userService = (UserService) applicationContext.getBean("userService");

@@ -1,10 +1,12 @@
 package com.yangweiyao.springframework.beans.factory.support;
 
+import com.yangweiyao.springframework.beans.BeansException;
 import com.yangweiyao.springframework.beans.factory.DisposableBean;
 import com.yangweiyao.springframework.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 在 DefaultSingletonBeanRegistry 中主要实现 getSingleton 方法，<br>
@@ -40,5 +42,18 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
         disposableBeans.put(beanName, bean);
     }
 
+    public void destroySingletons() {
+        Set<String> keySet = disposableBeans.keySet();
+        Object[] disposableBeanNames = keySet.toArray();
+        for (int i = disposableBeanNames.length - 1; i >= 0; i--) {
+            Object beanName = disposableBeanNames[i];
+            DisposableBean disposableBean = disposableBeans.remove(beanName);
+            try {
+                disposableBean.destroy();
+            } catch (Exception e) {
+                throw new BeansException("Destroy method on bean with name '" + beanName + "' threw an exception", e);
+            }
+        }
 
+    }
 }

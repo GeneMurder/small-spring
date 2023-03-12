@@ -1,8 +1,9 @@
 package com.yangweiyao.springframework.test.service;
 
+import com.yangweiyao.springframework.beans.factory.DisposableBean;
 import com.yangweiyao.springframework.test.dao.UserDao;
 
-public class UserService {
+public class UserService implements DisposableBean {
 
     private static int count = 0;
     private UserDao userDao;
@@ -18,5 +19,10 @@ public class UserService {
 
     public static void setCount(int count) {
         UserService.count = count;
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("模拟UserService释放内存");
     }
 }
