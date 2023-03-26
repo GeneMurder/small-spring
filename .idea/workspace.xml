@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="定义标记类型Aware接口，实现感知容器对象">
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/FactoryBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/FactoryBeanRegistrySupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/dao/IUserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/proxy/ProxyBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/FactoryBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/FactoryBeanRegistrySupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/dao/IUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/proxy/ProxyBeanFactory.java" afterDir="false" />
+    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="关于Bean对象作用域以及FactoryBean的实现和使用">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/AbstractApplicationEventMulticaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/ApplicationContextEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/ApplicationEventMulticaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/ContextClosedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/ContextRefreshedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/event/SimpleApplicationEventMulticaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/event/ContextRefreshedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/event/CustomEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/event/CustomEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/ApplicationContextTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/ApplicationContextTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/small-spring/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/ApplicationContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/ApplicationContextTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/utils/ClassUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +38,22 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release-20230228" />
+        <entry key="$PROJECT_DIR$" value="release-20230301" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Program Files\apache-maven-3.8.6-bin\apache-maven-3.8.6\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Program Files/apache-maven-3.8.6-bin/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="D:\Program Files\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2M2XkECC6lF80bzTp02v80sHqmH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,21 +63,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/small-spring&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/code/small-spring",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\i-code\small-spring\small-spring\lib" />
@@ -86,7 +87,7 @@
       <recent name="com.yangweiyao.springframework.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApplicationContextTest">
+  <component name="RunManager" selected="Application.CustomEventTest">
     <configuration name="ApplicationContextTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.ApplicationContextTest" />
       <module name="small-spring" />
@@ -102,6 +103,19 @@
     </configuration>
     <configuration name="BeanFactoryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.BeanFactoryTest" />
+      <module name="small-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yangweiyao.springframework.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomEventTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.CustomEventTest" />
       <module name="small-spring" />
       <extension name="coverage">
         <pattern>
@@ -141,6 +155,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomEventTest" />
         <item itemvalue="Application.ApplicationContextTest" />
         <item itemvalue="Application.BeanFactoryTest" />
         <item itemvalue="Application.ResourceLoaderTest" />
@@ -165,7 +180,7 @@
       <workItem from="1678093574314" duration="9532000" />
       <workItem from="1678632086309" duration="379000" />
       <workItem from="1679209438540" duration="1494000" />
-      <workItem from="1679810534279" duration="8990000" />
+      <workItem from="1679810534279" duration="13863000" />
     </task>
     <task id="LOCAL-00001" summary="创建简单的Bean容器">
       <created>1677122740944</created>
@@ -223,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679814152866</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="关于Bean对象作用域以及FactoryBean的实现和使用">
+      <created>1679819646644</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679819646644</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +271,8 @@
     <MESSAGE value="实现应用上下文，自动识别、资源加载、扩展机制" />
     <MESSAGE value="向虚拟机注册钩子，实现Bean对象的初始化和销毁方法" />
     <MESSAGE value="定义标记类型Aware接口，实现感知容器对象" />
-    <option name="LAST_COMMIT_MESSAGE" value="定义标记类型Aware接口，实现感知容器对象" />
+    <MESSAGE value="关于Bean对象作用域以及FactoryBean的实现和使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="关于Bean对象作用域以及FactoryBean的实现和使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

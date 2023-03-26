@@ -1,5 +1,7 @@
 package com.yangweiyao.springframework.utils;
 
+import com.yangweiyao.springframework.context.ApplicationListener;
+
 public class ClassUtils {
 
     public static ClassLoader getDefaultClassLoader() {
@@ -15,5 +17,13 @@ public class ClassUtils {
             cl = ClassUtils.class.getClassLoader();
         }
         return cl;
+    }
+
+    public static boolean isCglibProxyClass(Class<?> clazz) {
+        return (clazz != null && isCglibProxyClassName(clazz.getName()));
+    }
+
+    private static boolean isCglibProxyClassName(String className) {
+        return (className != null && className.contains("$$"));
     }
 }
