@@ -13,6 +13,8 @@ public class ApplicationContextTest {
         // 4. 获取bean，调用接口
         UserService userService = (UserService) applicationContext.getBean("userService");
         userService.queryUserInfo("10002");
+        System.out.println("ApplicationContextAware：" + userService.getApplicationContext());
+        System.out.println("BeanFactoryAware：" + userService.getBeanFactory());
 
         // 5. 第二次获取 bean from Singleton
         UserService userService_singleton = (UserService) applicationContext.getBean("userService");
