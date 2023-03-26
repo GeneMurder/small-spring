@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="向虚拟机注册钩子，实现Bean对象的初始化和销毁方法">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/Aware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanClassLoaderAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanFactoryAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/BeanNameAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/ApplicationContextAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/support/ApplicationContextAwareProcessor.java" afterDir="false" />
+    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="定义标记类型Aware接口，实现感知容器对象">
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/FactoryBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/FactoryBeanRegistrySupport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/dao/IUserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/proxy/ProxyBeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/FactoryBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/FactoryBeanRegistrySupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/proxy/ProxyBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/ApplicationContextTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/ApplicationContextTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/ApplicationContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/ApplicationContextTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release-20230227" />
+        <entry key="$PROJECT_DIR$" value="release-20230228" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,7 +165,7 @@
       <workItem from="1678093574314" duration="9532000" />
       <workItem from="1678632086309" duration="379000" />
       <workItem from="1679209438540" duration="1494000" />
-      <workItem from="1679810534279" duration="3506000" />
+      <workItem from="1679810534279" duration="8990000" />
     </task>
     <task id="LOCAL-00001" summary="创建简单的Bean容器">
       <created>1677122740944</created>
@@ -201,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678611077955</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="定义标记类型Aware接口，实现感知容器对象">
+      <created>1679814152866</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679814152866</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +248,19 @@
     <MESSAGE value="设计与实现资源加载器，从Spring.xml解析和注册Bean对象" />
     <MESSAGE value="实现应用上下文，自动识别、资源加载、扩展机制" />
     <MESSAGE value="向虚拟机注册钩子，实现Bean对象的初始化和销毁方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="向虚拟机注册钩子，实现Bean对象的初始化和销毁方法" />
+    <MESSAGE value="定义标记类型Aware接口，实现感知容器对象" />
+    <option name="LAST_COMMIT_MESSAGE" value="定义标记类型Aware接口，实现感知容器对象" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

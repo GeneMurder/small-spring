@@ -11,15 +11,16 @@ public class ApplicationContextTest {
         applicationContext.registerShutdownHook();
 
         // 4. 获取bean，调用接口
-        UserService userService = (UserService) applicationContext.getBean("userService");
+        UserService userService = applicationContext.getBean("userService", UserService.class);
         userService.queryUserInfo("10002");
-        System.out.println("ApplicationContextAware：" + userService.getApplicationContext());
-        System.out.println("BeanFactoryAware：" + userService.getBeanFactory());
+
 
         // 5. 第二次获取 bean from Singleton
-        UserService userService_singleton = (UserService) applicationContext.getBean("userService");
+        UserService userService_singleton = applicationContext.getBean("userService", UserService.class);
         userService_singleton.queryUserInfo("10001");
 
+        System.out.println(userService);
+        System.out.println(userService_singleton);
         System.out.println("Singleton: " + userService.equals(userService_singleton));
     }
 

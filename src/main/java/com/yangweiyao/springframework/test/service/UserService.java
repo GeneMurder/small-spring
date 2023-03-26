@@ -4,12 +4,13 @@ import com.yangweiyao.springframework.beans.BeansException;
 import com.yangweiyao.springframework.beans.factory.*;
 import com.yangweiyao.springframework.context.ApplicationContext;
 import com.yangweiyao.springframework.context.ApplicationContextAware;
+import com.yangweiyao.springframework.test.dao.IUserDao;
 import com.yangweiyao.springframework.test.dao.UserDao;
 
 public class UserService implements DisposableBean, BeanNameAware, BeanClassLoaderAware, ApplicationContextAware, BeanFactoryAware {
 
     private static int count = 0;
-    private UserDao userDao;
+    private IUserDao userDao;
     private ApplicationContext applicationContext;
     private BeanFactory beanFactory;
 
