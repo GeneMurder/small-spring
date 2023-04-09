@@ -19,6 +19,16 @@ public class AdvisedSupport {
     // 方法匹配器(检查目标方法是否符合通知条件)
     private MethodMatcher methodMatcher;
 
+    private boolean proxyTargetClass = false;
+
+    public boolean isProxyTargetClass() {
+        return proxyTargetClass;
+    }
+
+    public void setProxyTargetClass(boolean proxyTargetClass) {
+        this.proxyTargetClass = proxyTargetClass;
+    }
+
     public TargetSource getTargetSource() {
         return targetSource;
     }

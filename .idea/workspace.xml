@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="基于观察者实现，容器事件和事件监听器">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/aopalliance_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/aspectjweaver_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/aspectjweaver-1.9.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/AdvisedSupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/ClassFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/MethodMatcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/Pointcut.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/TargetSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/aspectj/AspectJExpressionPointcut.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/AopProxy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/Cglib2AopProxy$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/Cglib2AopProxy$CglibMethodInvocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/Cglib2AopProxy$DynamicAdvisedInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/Cglib2AopProxy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/ReflectiveMethodInvocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/AopProxyTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/interceptor/UserServiceInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/IUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/service/impl/IUserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/AdvisedSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/ClassFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/MethodMatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/Pointcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/TargetSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/aspectj/AspectJExpressionPointcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/AopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/Cglib2AopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/ReflectiveMethodInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/AopProxyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/interceptor/UserServiceInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/service/impl/IUserServiceImpl.java" afterDir="false" />
+    <list default="true" id="7f9b01f5-a782-43bf-80dd-7b5485d639bf" name="Changes" comment="基于JDK和Cglib动态代理，实现AOP核心功能">
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/Advisor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/BeforeAdvice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/MethodBeforeAdvice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/PointcutAdvisor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/aspectj/AspectJExpressionPointcutAdvisor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/ProxyFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/adapter/MethodBeforeAdviceInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/autoproxy/DefaultAdvisorAutoProxyCreator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/SpringAopTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/test/advice/UserServiceBeforeAdvice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/Advisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/BeforeAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/MethodBeforeAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/PointcutAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/aspectj/AspectJExpressionPointcutAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/ProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/adapter/MethodBeforeAdviceInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/autoproxy/DefaultAdvisorAutoProxyCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/SpringAopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/test/advice/UserServiceBeforeAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small-spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/small-spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/AdvisedSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/AdvisedSupport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/small-spring/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/small-spring/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/AdvisedSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/AdvisedSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +50,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release-20230302" />
+        <entry key="$PROJECT_DIR$" value="release-20230303" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/org/aopalliance/aop/Advice.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -81,22 +78,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/code/java-code/small-spring/lib",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/small-spring&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\java-code\small-spring\lib" />
@@ -107,7 +104,7 @@
       <recent name="com.yangweiyao.springframework.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AopProxyTest">
+  <component name="RunManager" selected="Application.SpringAopTest">
     <configuration name="AopProxyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.AopProxyTest" />
       <module name="small-spring" />
@@ -160,8 +157,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResourceLoaderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.ResourceLoaderTest" />
+    <configuration name="SpringAopTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yangweiyao.springframework.test.SpringAopTest" />
       <module name="small-spring" />
       <extension name="coverage">
         <pattern>
@@ -175,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpringAopTest" />
         <item itemvalue="Application.AopProxyTest" />
         <item itemvalue="Application.CustomEventTest" />
         <item itemvalue="Application.ApplicationContextTest" />
         <item itemvalue="Application.BeanFactoryTest" />
-        <item itemvalue="Application.ResourceLoaderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +198,10 @@
       <workItem from="1678632086309" duration="379000" />
       <workItem from="1679209438540" duration="1494000" />
       <workItem from="1679810534279" duration="14710000" />
-      <workItem from="1680329565177" duration="7222000" />
+      <workItem from="1680329565177" duration="8927000" />
+      <workItem from="1680446228985" duration="599000" />
+      <workItem from="1680962551780" duration="6547000" />
+      <workItem from="1681045036420" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="创建简单的Bean容器">
       <created>1677122740944</created>
@@ -273,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679825890772</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="基于JDK和Cglib动态代理，实现AOP核心功能">
+      <created>1680340402299</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680340402299</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,15 +308,25 @@
     <MESSAGE value="定义标记类型Aware接口，实现感知容器对象" />
     <MESSAGE value="关于Bean对象作用域以及FactoryBean的实现和使用" />
     <MESSAGE value="基于观察者实现，容器事件和事件监听器" />
-    <option name="LAST_COMMIT_MESSAGE" value="基于观察者实现，容器事件和事件监听器" />
+    <MESSAGE value="基于JDK和Cglib动态代理，实现AOP核心功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="基于JDK和Cglib动态代理，实现AOP核心功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/autoproxy/DefaultAdvisorAutoProxyCreator.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yangweiyao/springframework/aop/framework/JdkDynamicAopProxy.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -322,5 +339,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/small_spring$SpringAopTest.ic" NAME="SpringAopTest Coverage Results" MODIFIED="1680967914404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.yangweiyao.springframework.test.*</FILTER>
+    </SUITE>
   </component>
 </project>
