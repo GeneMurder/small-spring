@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean class="com.yangweiyao.springframework.beans.factory.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:token.properties"/>
+    </bean>
+
+    <bean id="loginService" class="com.yangweiyao.springframework.test.service.impl.LoginServiceImpl">
+        <property name="token" value="${token}"/>
+    </bean>
+
+</beans>
