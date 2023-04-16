@@ -24,4 +24,7 @@ public interface BeanFactory {
      */
     Object getBean(String name, Object... args) throws BeansException;
 
+
+    <T> T getBean(Class<T> requiredType) throws BeansException;
+
 }

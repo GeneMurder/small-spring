@@ -3,6 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/context ">
 
-    <context:component-scan base-package="com.yangweiyao.springframework.test.service"/>
+    <bean class="com.yangweiyao.springframework.beans.factory.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:token.properties"/>
+    </bean>
+
+    <context:component-scan base-package="com.yangweiyao.springframework.test"/>
 
 </beans>

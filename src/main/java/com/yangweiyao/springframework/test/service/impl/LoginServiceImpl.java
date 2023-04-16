@@ -1,7 +1,10 @@
 package com.yangweiyao.springframework.test.service.impl;
 
 import cn.hutool.core.util.StrUtil;
+import com.yangweiyao.springframework.beans.factory.annotation.Autowired;
+import com.yangweiyao.springframework.beans.factory.annotation.Value;
 import com.yangweiyao.springframework.stereotype.Component;
+import com.yangweiyao.springframework.test.dao.UserNamePasswordQueryRepository;
 import com.yangweiyao.springframework.test.service.LoginService;
 
 /**
@@ -12,17 +15,17 @@ import com.yangweiyao.springframework.test.service.LoginService;
 @Component
 public class LoginServiceImpl implements LoginService {
 
+    @Value("${token}")
     private String token;
+
+    @Autowired
+    private UserNamePasswordQueryRepository userNamePasswordQueryRepository;
 
     @Override
     public boolean login(String token) {
         System.out.printf("token:%s, your token:%s\n", this.token, token);
 
-        if(StrUtil.isEmpty(this.token)) {
-            return false;
-        }
-
-        if(this.token.equals(token)) {
+        if(this.token.equals(token) || userNamePasswordQueryRepository.checkUsername(token)) {
             System.out.println("登录成功");
             return true;
         } else {

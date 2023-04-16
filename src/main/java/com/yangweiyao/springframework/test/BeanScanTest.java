@@ -14,6 +14,6 @@ public class BeanScanTest {
 //        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring-property.xml");
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring-scan.xml");
         LoginServiceImpl loginService = applicationContext.getBean("loginServiceImpl", LoginServiceImpl.class);
-        System.out.println(loginService.login("123"));
+        System.out.println(loginService.login("root"));
     }
 }
